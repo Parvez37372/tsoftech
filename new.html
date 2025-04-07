@@ -1,0 +1,428 @@
+<style>
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Button Styling */
+.btn {
+    background: #2f3d8f;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background: #1e2a58;
+}
+
+/* Blog Container */
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Blog Card */
+.blog-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 20px;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.blog-card h2 {
+    font-size: 1.4em;
+    margin: 15px 0;
+    color: #444;
+}
+
+.blog-card p {
+    color: #666;
+    font-size: 0.95em;
+    text-align: justify;
+}
+
+.blog-card .btn {
+    margin-top: 15px;
+}
+
+/* Sidebar Section */
+.blog-details__right-item {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-details__right-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.blog-details__right-item .title {
+    font-size: 1.3em;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.serach-bar {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.serach-bar input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+.serach-bar button {
+    background-color: #2f3d8f;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.serach-bar button i {
+    font-size: 1.2em;
+}
+
+/* Recent Posts and Category Lists */
+.single-post, .category {
+    list-style: none;
+    padding-left: 0;
+}
+
+.single-post li, .category li {
+    margin-bottom: 15px;
+}
+
+.single-post li .con, .category li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.single-post li .con a {
+    font-size: 1em;
+    color: black;
+    text-decoration: none;
+}
+
+.single-post li .con a:hover {
+    color: #2f3d8f;
+}
+
+.single-post li .con span, .category li span {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Tags Section */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tags a {
+    background-color: #f1f1f1;
+    padding: 8px 12px;
+    border-radius: 16px;
+    font-size: 0.9em;
+    color: black;
+    text-decoration: none;
+}
+
+.tags a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from tsofttech.co/new.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Mar 2025 11:12:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>T SOFT TECH</title>
+  <!-- Favicon img -->
+  <link rel="shortcut icon" href="assets/images/fav.png" />
+  <!-- Bootstarp min css -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <!-- Mean menu css -->
+  <link rel="stylesheet" href="assets/css/meanmenu.css" />
+  <!-- All min css -->
+  <link rel="stylesheet" href="assets/css/all.min.css" />
+  <!-- Swiper bundle min css -->
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+  <!-- Magnigic popup css -->
+  <link rel="stylesheet" href="assets/css/magnific-popup.css" />
+  <!-- Animate css -->
+  <link rel="stylesheet" href="assets/css/animate.css" />
+  <!-- Nice select css -->
+  <link rel="stylesheet" href="assets/css/nice-select.css" />
+  <!-- Style css -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Sitemap Link -->
+    <link rel="sitemap" type="application/xml" href="sitemap.xml" />
+    
+    
+
+</head>
+
+<body>
+  <!-- Preloader area start -->
+  <div id="loading" class="preloader">
+    <div class="loading-overlay"></div>
+    <div class="custom-loader">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <!-- Preloader area end -->
+
+  <!-- Top header area start here -->
+ 
+  <!-- Top header area end here -->
+
+  <!-- Header area start here -->
+  
+  
+  <style>
+      .header-area{
+          top:0 !important;
+      }
+  </style>
+  <header class="header-area">
+    <div class="container">
+      <div class="header__main">
+        <a href="index-2.html" class="logo">
+          <img src="assets/images/logo/logo.webp" alt="logo" />
+        </a>
+        <a href="index-2.html" class="logo logo-light">
+          <img src="assets/images/logo/logo.webp" alt="logo" />
+        </a>
+        <div class="main-menu">
+          <nav>
+            <ul>
+              <li>
+                <a href="index-2.html">Home</a>
+              </li>
+              <li><a href="about-us.html">About Us</a></li>
+              <li>
+                <a href="our-services.html">Services <i class="fa-solid fa-angle-down"></i></a>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="website-designing.html">Website Designing</a>
+                  </li>
+                  <li>
+                    <a href="website-development.html">Website Development</a>
+                  </li>
+                  <li>
+                    <a href="mobile-app-development.html">Mobile App Development</a>
+                  </li>
+                  <li>
+                    <a href="search-engine-optimization.html">Search Engine Optimization</a>
+                  </li>
+                  <li>
+                    <a href="social-media-marketing.html">Social Media Marketing</a>
+                  </li>
+                  <li>
+                    <a href="facebook-ads.html">facebook Ads</a>
+                  </li>
+                  <li>
+                    <a href="google-ads.html">Google Ads</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="bulksms.html">Bulk SMS</a>
+              </li>
+              <li>
+                <a href="new.html">Blog</a>
+              </li>
+              <li>
+                <a href="portfolio.html">Portfolio</a>
+              </li>
+              <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <a href="contact-us.html" class="btn-menu d-none d-lg-inline-block">Get in Touch<i
+            class="fa-regular fa-circle-arrow-right ml-10"></i></a>
+        <div class="bars d-block d-lg-none">
+          <i id="openButton" class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header area end here -->
+
+  <!-- Sidebar area start here -->
+  <div id="targetElement" class="sidebar-area sidebar__hide">
+    <div class="sidebar__overlay"></div>
+    <a href="index-2.html" class="logo mb-40">
+      <img src="assets/images/logo/logo.webp" alt="logo" />
+    </a>
+    <div class="mobile-menu overflow-hidden"></div>
+    <ul class="info pt-40">
+      <li>
+        <i class="fa-solid primary-color fa-location-dot"></i>
+        <a href="javascript:void(0);">Office no 210, 2nd floor, Jaina tower-2, District centre, New Delhi-110058</a>
+      </li>
+      <li class="py-2">
+        <i class="fa-solid primary-color fa-phone-volume"></i>
+        <a href="tel:8287544749">+91 8287544749</a>
+      </li>
+      <li>
+        <i class="fa-solid primary-color fa-paper-plane"></i>
+        <a href="info%40tsofttech.html">info@tsofttech.co</a>
+      </li>
+    </ul>
+    <div class="social-icon mt-20">
+      <a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#0"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#0"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+    <button id="closeButton" class="text-white">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+  <!-- Sidebar area end here -->
+  
+  
+  
+ 
+  <!-- SweetAlert2 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</br>
+
+</br>
+
+</br>
+
+</br>
+
+</br>
+<div class="container">
+    <div class="row">
+        <!-- Sidebar Section -->
+        <div class="col-lg-4 order-1 order-lg-2">
+            <div class="blog-details__right-item">
+                <div class="item mb-40">
+                    <h5 class="title">Search</h5>
+                    <div class="serach-bar">
+                        <input type="text" placeholder="Search">
+                        &nbsp
+                        <button>Search</button>
+                    </div>
+                </div>
+                <div class="item mb-40">
+                    <h5 class="title">Recent Posts</h5>
+                    <ul class="single-post">
+                        <li>
+                            <div class="con">
+                                <h6><a href="#" class="primary-hover">Why Is Blog SEO Important?</a></h6>
+                                <span>January 05, 2024</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="con">
+                                <h6><a href="blog-details-2.html" class="primary-hover">Write for humans, not search engines</a></h6>
+                                <span>January 02, 2024</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="con">
+                                <h6><a href="blog-details-2.html" class="primary-hover">The Basics of SEO Content Writing</a></h6>
+                                <span>December 27, 2023</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item mb-40">
+                    <h5 class="title">Category</h5>
+                    <ul class="category">
+                        <li class="pt-0"><a href="#0">All</a> <span>(61)</span></li>
+                        <li><a href="#0">Web Development</a> <span>(16)</span></li>
+                        <li><a href="#0">Web Design</a> <span>(14)</span></li>
+                        <li class="pb-0"><a href="#0">Keyword Research</a> <span>(09)</span></li>
+                    </ul>
+                </div>
+                <div class="item mb-40">
+                    <h5 class="title">Popular Tags</h5>
+                    <div class="tags">
+                        <a href="#0">keyword</a>
+                        <a href="#0">research</a>
+                        <a href="#0">information</a>
+                        <a href="#0">website</a>
+                        <a href="#0">page</a>
+                        <a href="#0">technical</a>
+                        <a href="#0">ios</a>
+                        <a href="#0">technology</a>
+                        <a href="#0">design</a>
+                        <a href="#0">marketing</a>
+                        <a href="#0">corporate</a>
+                        <a href="#0">seo</a>
+                        <a href="#0">tech</a>
+                        <a href="#0">media</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blogs Section -->
+        <div class="col-lg-8 order-2 order-lg-1">
+            <div class="blog-container">
+                <br />
+<b>Fatal error</b>:  Uncaught mysqli_sql_exception: Table 'u288428719_blog_website.blogs' doesn't exist in /home/u288428719/domains/tsofttech.co/public_html/new.php:265
+Stack trace:
+#0 /home/u288428719/domains/tsofttech.co/public_html/new.php(265): mysqli-&gt;query()
+#1 {main}
+  thrown in <b>/home/u288428719/domains/tsofttech.co/public_html/new.php</b> on line <b>265</b><br />
